@@ -1,3 +1,4 @@
+advertising
 advice
 advisable
 advise
@@ -6,11 +7,8 @@ advisor
 advisory
 advocacy
 advocate
-advocate
+aegis
 aerial
 aerobic
 aerobics
-aerodynamic
-notfound
-0.040384531021118164
-0.005110025405883789
+aaaaaaaaaa
