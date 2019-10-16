@@ -1,12 +1,23 @@
 import re
 
+my_alphabet = [i for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-\'']
+
+def custom_key(word):
+    numbers = []
+    for letter in word:
+        try:
+            numbers.append(my_alphabet.index(letter))
+        except:
+            numbers.append(28)
+    return numbers
+
 def SelectWords(path):
     f = open(path,'r')
     WordList = []
     for i in f:
         WordList +=(re.split('[,/.\\\n \t\r:|]',i))
     f.close()
-    WordList.sort(key=str.lower)
+    WordList.sort(key=custom_key
     while WordList[0] == '':
         del WordList[0]
     return WordList
