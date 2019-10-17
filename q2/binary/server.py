@@ -87,8 +87,11 @@ def SearchWords(data):
         while chr(m[site]) in '0123456789':
             rstLength += str(chr(m[site]))
             site += 1
-        rst += m[site:(site+int(rstLength))].decode()
-        rst += '\n'
+        try:
+            rst += m[site:(site+int(rstLength))].decode()
+            rst += '\n'
+        except:
+            print(rst)
     l.close()
     return rst
 
@@ -104,3 +107,4 @@ def serverMain():
             time.sleep(0.2)
         else:
             return
+serverMain()

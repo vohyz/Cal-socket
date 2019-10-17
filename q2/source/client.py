@@ -14,6 +14,7 @@ buffer_size = 1024
 f = open(pathTxt, "r")
 msg = ''
 for i in f:
+    msg += str(len(i)-1)
     msg += i
 f.close()
 
@@ -85,3 +86,4 @@ def clientMain():
             break
     searchWords('end')
     draw(paint)
+clientMain()
