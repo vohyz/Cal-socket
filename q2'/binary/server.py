@@ -69,14 +69,14 @@ def message_handle(client):
             break
         else:
             data = bytes.split()
-            while True:
+            while True:                                 #根据当前被占用线程数以及当前连接数
                 if thread_count >= thread_max:
                     time.sleep(0.1)
                 else:
                     myCount = thread_max - thread_count
                     break
             #print(myCount)
-            bag = DivideWords(data, myCount)
+            bag = DivideWords(data, myCount)            #分解待搜索词
             mythread_pool = []
             for i in bag:
                 mythread_pool.append(Search(i))
