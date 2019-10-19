@@ -19,7 +19,7 @@ def SearchWords():
     m = mmap.mmap(fd, 0,  access= mmap.ACCESS_READ)
     wList = []
     for i in t:
-        mes = str(len(i)-1) + i
+        mes = str(len(i.strip('\n'))) + i
         wList += mes.split()
     for i in range(0, len(wList)):
         findNo = m.find(wList[i].encode("utf-8"))

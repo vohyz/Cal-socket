@@ -17,6 +17,7 @@ def SelectWords(path):
     for i in f:
         WordList +=(re.split('[,/.\\\n \t\r:|]',i))
     f.close()
+    WordList = list(set(WordList))
     WordList.sort(key=custom_key)
     while WordList[0] == '':
         del WordList[0]
